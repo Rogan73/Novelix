@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <link rel="icon" href="ui/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="ui/styles.css">
+</head>
+<body>
+    <div id="novel-container">
+        <!-- Фоновое изображение -->
+        <div id="background-container">
+            <img id="background-image" src="" alt="">
+        </div>
+        
+        <!-- Контейнер для текста -->
+        <div id="text-container">
+            <div id="text-bubble">
+                <img id="image-bubble" src="ui/bubble.png" alt="Текстовое облако">
+                <div id="text-content"></div>
+            </div>
+            
+            <!-- Кнопки навигации -->
+            <div id="navigation">
+                <button id="prev-btn" class="nav-btn">
+                    <img src="ui/arrow-left.png" alt="Назад">
+                </button>
+                <button id="next-btn" class="nav-btn">
+                    <img src="ui/arrow-right.png" alt="Вперед">
+                </button>
+            </div>
+            
+            <!-- Кнопки управления -->
+            <div id="controls">
+                <button id="play-pause-btn" class="control-btn">
+                    <img src="ui/play.png" alt="Воспроизведение/Пауза" id="play-pause-icon" title="Воспроизведение/Пауза" >
+                </button>
+                <button id="settings-btn" class="control-btn">
+                    <img src="ui/settings.png" alt="Настройки" title="Настройки">
+                </button>
+                <!-- <button id="autoscroll-btn" class="control-btn">
+                    <img src="ui/play.png" alt="Автопрокрутка">
+                </button> -->
+                <button id="exit-btn" class="control-btn">
+                    <img src="ui/exit.png" alt="Выход" title="Выход">
+                </button>
+            </div>
+        </div>
+        
+        <!-- Стартовый экран -->
+        <div id="start-screen">
+            <h1 id="novel-title"></h1>
+            <img id="novel-image" src="images/title.png" alt="Обложка">
+            <button id="start-btn">Начать</button>
+        </div>
+        
+        <!-- Экран настроек -->
+        <div id="settings-screen">
+            <h2>Настройки</h2>
+            <div class="settings-group">
+                <label for="speed-slider">Скорость текста: <span id="speed-value">1000</span> мс</label>
+                <input type="range" id="speed-slider" min="100" max="5000" step="100" value="1000">
+            </div>
+            <div class="settings-group">
+                <label for="opacityBubble-slider">Подложка под текст: <span id="opacityBubble-value">100</span></label>
+                <input type="range" id="opacityBubble-slider" min="10" max="100" step="10" value="100">
+            </div>
+
+            <div class="settings-group">
+                <label for="font-family">Шрифт:</label>
+                <select id="font-family">
+                    <option value="serif">С засечками (Serif)</option>
+                    <option value="sans-serif">Без засечек (Sans-serif)</option>
+                    <option value="monospace">Моноширинный (Monospace)</option>
+                    <option value="cursive">Курсив (Cursive)</option>
+                    <option value="fantasy">Декоративный (Fantasy)</option>
+                </select>
+            </div>
+            <div class="settings-group">
+                <label for="font-size">Размер шрифта: <span id="font-size-value">16</span>px</label>
+                <input type="range" id="font-size-slider" min="12" max="56" step="1" value="16">
+            </div>
+            <div class="settings-group">
+                <label for="font-color">Цвет текста:</label>
+                <input type="color" id="font-color" value="#000000">
+            </div>
+            <div class="settings-group">
+                <button id="restart-btn">Перезапустить</button>
+            </div>
+            <div class="settings-group">
+                <label for="goto-line">Перейти к строке:</label>
+                <input type="number" id="goto-line" min="0" value="0">
+                <button id="goto-btn">Перейти</button>
+            </div>
+            <div class="settings-group">
+                <label>
+                    <input type="checkbox" id="developer-mode">
+                    Режим разработчика
+                </label>
+            </div>
+            <button id="close-settings-btn">Закрыть</button>
+            <div id="copyright">Developed by <a href="https://rikosoft.com" target="_blank" style="color: gray;">AlexRogan</a> & Cloude Sonnet 3.7 2025</div>
+        </div>
+        
+        <!-- Диалог подтверждения выхода -->
+        <div id="exit-dialog">
+            <div class="dialog-content">
+                <p>Вы уверены, что хотите выйти?</p>
+                <div class="dialog-buttons">
+                    <button id="confirm-exit-btn">Да</button>
+                    <button id="cancel-exit-btn">Нет</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Аудио элементы -->
+    <audio id="background-music" loop></audio>
+    <audio id="sound-effect"></audio>
+    
+    <!-- Скрипты -->
+    <script src="story.js"></script>
+    <script src="ui/ui.js"></script>
+    <script src="ui/main.js"></script>
+</body>
+</html>
