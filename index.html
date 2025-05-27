@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="copyright" content="2025, Alex Rogan">
+     <meta name="project-name" content="Конструктор для создания простых визуальных новелл">
     <title></title>
-    
     <link rel="icon" href="ui/favicon.png" type="image/png">
-    
+   
     <link rel="stylesheet" href="ui/styles.css">
 </head>
 <body>
@@ -87,21 +88,29 @@
                 <label for="font-color">Цвет текста:</label>
                 <input type="color" id="font-color" value="#000000">
             </div>
-            <div class="settings-group">
-                <button id="restart-btn">Перезапустить</button>
+            <div class="flex">
+                
+                
+                <input type="checkbox" checked id="switch-music" class="chk">
+                <label for="switch-music">Музыка и эфекты вкл./выкл.:</label>
             </div>
+
             <div class="settings-group">
-                <label for="goto-line">Перейти к строке:</label>
+                <label for="goto-line">Перейти к кадру:</label>
                 <input type="number" id="goto-line" min="0" value="0">
                 <button id="goto-btn">Перейти</button>
             </div>
-            <div class="settings-group">
-                <label>
-                    <input type="checkbox" id="developer-mode">
-                    Режим разработчика
-                </label>
+            <div class="flex">
+                <input type="checkbox" id="developer-mode" class="chk">
+                <label for="developer-mode">Режим разработчика</label>
             </div>
+
+            <div class="flex">
+                <button id="restart-btn">Начать с начала</button>
+           
             <button id="close-settings-btn">Закрыть</button>
+            </div>
+
             <div id="copyright">Developed by <a href="https://rikosoft.com" target="_blank" style="color: gray;">AlexRogan</a> & Cloude Sonnet 3.7 2025</div>
         </div>
         

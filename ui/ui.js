@@ -26,6 +26,8 @@ const elements = {
     closeSettingsBtn: document.getElementById('close-settings-btn'),
     confirmExitBtn: document.getElementById('confirm-exit-btn'),
     cancelExitBtn: document.getElementById('cancel-exit-btn'),
+
+    switchMusic: document.getElementById('switch-music'),
     
     // Настройки
     speedSlider: document.getElementById('speed-slider'),
@@ -65,6 +67,7 @@ const defaultOptions = {
     fontColor: '#000000',
     isDeveloperMode: false,
     opacityImageBabble: 100,
+    isMusicOn: true
 };
 
 // Название и обложка
@@ -160,12 +163,36 @@ function applyOptions() {
     elements.fontColor.value = options.fontColor;
     elements.textContent.style.color = options.fontColor;
     
-    
+    // Включение/отклчение музыки
+    elements.switchMusic.checked = options.isMusicOn;
+
     // Применение режима разработчика
     elements.developerMode.checked = options.isDeveloperMode;
     uiState.isDeveloperMode = options.isDeveloperMode;
     toggleDeveloperInfo();
 }
+
+function loadMusic(){
+            const backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.src = `audio/${novelState.currentMusic}.mp3`;
+            backgroundMusic.load();
+            backgroundMusic.play().catch(e => console.error('Ошибка воспроизведения музыки:', e));
+            
+}
+
+// включение / выключение музыки
+function toggleMusic() {
+    options.isMusicOn = !options.isMusicOn;
+    elements.switchMusic.checked = options.isMusicOn;
+    if (options.isMusicOn){
+       loadMusic() 
+    }else{
+        pause();
+    }
+        
+    saveOptions();  
+}
+
 
 // Настройка обработчиков событий
 function setupEventListeners() {
@@ -193,7 +220,8 @@ function setupEventListeners() {
     elements.gotoBtn.addEventListener('click', gotoLine);
     elements.developerMode.addEventListener('change', toggleDeveloperMode);
     
-
+    // включение / отклчение музыки
+    elements.switchMusic.addEventListener('change', toggleMusic);
 
     // Кнопки диалога выхода
     elements.confirmExitBtn.addEventListener('click', exitNovel);

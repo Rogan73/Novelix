@@ -152,7 +152,7 @@ function displayFrame(reloaded=false) {
     }
     
     // Воспроизведение фоновой музыки, если указана
-    if (frameData.music) {
+    if (frameData.music && options.isMusicOn) {
         const backgroundMusic = document.getElementById('background-music');
         
         // Если музыка отличается от текущей, меняем

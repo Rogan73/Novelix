@@ -1,2890 +1,356 @@
-/* Общие стили */
+/* === Общие стили === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    overflow: hidden;
-    background-color: #000000;
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: #000;
 }
 
+/* === Основные контейнеры === */
 #novel-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Фоновое изображение */
 #background-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 #background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 1s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
 }
 
-/* Контейнер для текста */
+/* === Текст === */
 #text-container {
-    position: absolute;
-    bottom: 20px;
-    left: 15%;
-    width: 70%;
-    z-index: 2;
+  position: absolute;
+  bottom: 20px;
+  left: 15%;
+  width: 70%;
+  z-index: 2;
 }
 
 #text-bubble {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 #text-bubble img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 #text-content {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    height: 60%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 16px;
-    color: #000;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 60%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
 }
 
-/* Кнопки навигации */
+/* === Кнопки навигации === */
 #navigation {
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: 108%;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
     pointer-events: none;
+    left: -50px;
 }
 
-.nav-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-    pointer-events: auto;
+.nav-btn,
+.control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  pointer-events: auto;
 }
 
-.nav-btn:hover {
-    opacity: 1;
+.nav-btn:hover,
+.control-btn:hover {
+  opacity: 1;
 }
 
 .nav-btn img {
-    width: 96px;
-    height: 96px;
-}
-
-/* Кнопки управления */
-#controls {
-    position: absolute;
-    bottom: 10px;
-    right: 65px; /* Изменено с left: 50% на right: 10px */
-    transform: none; /* Убрано translateX(-50%) */
-    display: flex;
-    gap: 20px;
-}
-
-.control-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.control-btn:hover {
-    opacity: 1;
+  width: 96px;
+  height: 96px;
 }
 
 .control-btn img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-/* Стартовый экран */
+/* === Управление === */
+#controls {
+  position: absolute;
+  bottom: 10px;
+  right: 65px;
+  display: flex;
+  gap: 20px;
+}
+
+/* === Стартовый экран === */
 #start-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
 #start-screen h1 {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
 #start-btn {
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    background-color: #a87a06;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 30px;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #35180a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 30px;
 }
 
 #start-btn:hover {
-    background-color: #c68e00;
+  background-color: #6d3818;
 }
 
-/* Экран настроек */
+/* === Экран настроек === */
 #settings-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 23%;
-    height: 100%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(60 60 60);
-    z-index: 10;
-    color: white;
-    padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(66 47 40);
+  z-index: 10;
+  color: white;
+  padding: 20px;
 }
 
 #settings-screen h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 .settings-group {
-    margin-bottom: 15px;
-    width: 80%;
-    max-width: 500px;
+  margin-bottom: 15px;
+  width: 80%;
+  max-width: 500px;
 }
 
 .settings-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-.settings-group input[type="range"],
-.settings-group select,
-.settings-group input[type="color"],
-.settings-group input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+.settings-group input,
+.settings-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .settings-group input[type="checkbox"] {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #close-settings-btn,
 #restart-btn,
 #goto-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #35180a;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 #close-settings-btn:hover,
 #restart-btn:hover,
 #goto-btn:hover {
-    background-color: #45a049;
+  background-color: #5c270d;
 }
 
 #goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
+  width: 60%;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 #goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
+  width: 30%;
+  display: inline-block;
+  margin-top: 0;
 }
 
-/* Диалог подтверждения выхода */
+/* === Диалог выхода === */
 #exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 11;
 }
 
 .dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 300px;
 }
 
 .dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
 .dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 #confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
+  background-color: #f44336;
+  color: white;
 }
 
 #cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
+  background-color: #ccc;
+  color: black;
 }
 
-/* Режим разработчика */
+/* === Режим разработчика === */
 .developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  z-index: 9;
 }
 
-/* Адаптивность для мобильных устройств */
+/* === Адаптивность === */
 @media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
+  #text-container {
+    width: 90%;
+    left: 5%;
+  }
+  .nav-btn img {
+    width: 30px;
+    height: 30px;
+  }
+  .control-btn img {
+    width: 25px;
+    height: 25px;
+  }
+  #controls {
+    gap: 15px;
+  }
 }
 
-/* Анимация для плавного появления текста */
+/* === Анимация === */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Активное состояние кнопок */
 .active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
+  opacity: 1;
+  filter: brightness(1.2);
 }
 
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
+/* === Дополнительные элементы === */
+#copyright {
+  font-size: 12px;
+  margin-top: 16px;
+  color: gray;
+  position: absolute;
+  bottom: 10px;
+  left: 52px;
 }
 
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
+#novel-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+  max-width: 50%;
+  max-height: 78%;
+  object-fit: contain;
 }
 
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
+.flex {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 11;
-}
-
-.dialog-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    max-width: 300px;
-}
-
-.dialog-buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.dialog-buttons button {
-    padding: 8px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirm-exit-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-#cancel-exit-btn {
-    background-color: #ccc;
-    color: black;
-}
-
-/* Режим разработчика */
-.developer-info {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: monospace;
-    z-index: 9;
-}
-
-/* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
-    #text-container {
-        width: 90%;
-        left: 5%;
-    }
-    
-    .nav-btn img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .control-btn img {
-        width: 25px;
-        height: 25px;
-    }
-    
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* Анимация для плавного появления текста */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Активное состояние кнопок */
-.active-btn {
-    opacity: 1;
-    filter: brightness(1.2);
-}
-
-#goto-line {
-    width: 60%;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-#goto-btn {
-    width: 30%;
-    display: inline-block;
-    margin-top: 0;
-}
-
-/* Диалог подтверждения выхода */
-#exit-dialog {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba
-}
-
-#copyright{
-    font-size: 12px;
-    margin-top: 16px;
-    color: gray;
-    position: absolute;
-    bottom: 10px;
-    left: 52px;
-}
-
-
-#novel-image{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: auto;
-    max-width: 50%;
-    max-height: 78%;
-    object-fit: contain;
+    justify-content: flex-start;
+    gap: 14px;
+    margin: 17px 0;
+    width: 80%;
+}
+
+.chk{
+    width: 20px;
+    height: 20px;
 }
